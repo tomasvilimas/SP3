@@ -14,7 +14,6 @@ class ComposerStaticInit0d5cc983c469c7f2f5a5a166105ddf58
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '5870fa8c952d9b1f47bc265fe62d2973' => __DIR__ . '/../..' . '/src/projektas.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -34,6 +33,10 @@ class ComposerStaticInit0d5cc983c469c7f2f5a5a166105ddf58
         array (
             'Psr\\Container\\' => 14,
             'PackageVersions\\' => 16,
+        ),
+        'M' => 
+        array (
+            'Models\\' => 7,
         ),
         'D' => 
         array (
@@ -95,6 +98,10 @@ class ComposerStaticInit0d5cc983c469c7f2f5a5a166105ddf58
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
+        ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/models',
         ),
         'Doctrine\\Persistence\\' => 
         array (

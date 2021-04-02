@@ -5,7 +5,10 @@
         "doctrine/orm": "^2.8"
     },
     "autoload": {
-        "files": ["src/projektas.php"]
+        "psr-4": { 
+			"Models\\": "src/models/"
+		}
     }
+
 
 }

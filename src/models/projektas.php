@@ -1,5 +1,10 @@
 <?php
+
+namespace Models;
+
 use Doctrine\ORM\Mapping as ORM;
+
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="projektai")
@@ -18,6 +23,12 @@ class projektas {
     public function getId(){
         return $this->id;
     }
+
+    public function getname(){
+        return $this->name;
+    }
+
+    
     public function setName($name){
         $this->name = $name;
     }
