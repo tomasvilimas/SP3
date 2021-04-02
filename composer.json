@@ -1,0 +1,11 @@
+{
+    "name": "tomas/dar",
+    "description": "nuu",
+    "require": {
+        "doctrine/orm": "^2.8"
+    },
+    "autoload": {
+        "files": ["src/projektas.php"]
+    }
+
+}
