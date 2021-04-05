@@ -71,8 +71,8 @@ foreach($products as $p)
     print("<tr>" 
             . "<td>" . $p->getId()  . "</td>" 
             . "<td>" . $p->getName() . "</td>"
-            . "<td><a href=\"?delete={$p->getId()}\">DELETE</a>☢️</td>" 
-            . "<td><a href=\"?updatable={$p->getId()}\">UPDATE</a>♻️</td>"
+            . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a></td>" 
+            . "<td><a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
         . "</tr>");
 print("</table>"); 
 print("</pre><hr>");
@@ -96,7 +96,7 @@ if(isset($_GET['updatable'])){
 <form action="" method="GET">
   <label for="name"></label><br>
   <input class=input type="text" name="name" value=""  placeholder="Darbuotojas vardas" Required><br>
-  <input class=button type="submit" value="Pridėti Darbuotoją">
+  <input class=button type="submit" value="Pridėti darbuotoją">
 </form> 
 <hr>
 

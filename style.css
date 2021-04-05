@@ -93,6 +93,23 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.button2 {
+  background-color: #1c335f;
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 4px 2px;
+  cursor: pointer;
+}.button2:hover {
+  box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 .crud {
   background-color: #1c335f;
   border: none;
