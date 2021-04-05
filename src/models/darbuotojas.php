@@ -4,6 +4,60 @@ namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
 
+// /**
+//  * @ORM\Entity
+//  * @ORM\Table(name="Darbuotojai")
+//  */
+// class Darbuotojas
+// {
+//     /** 
+//      * @ORM\Id
+//      * @ORM\Column(type="integer")
+//      * @ORM\GeneratedValue
+//      */
+//     protected $id;
+
+//     /** 
+//      * @ORM\Column(type="string")
+//      */
+//     protected $name;
+
+//     public function getId()
+//     {
+//         return $this->id;
+//     }
+
+//     public function getname()
+//     {
+//         return $this->name;
+//     }
+
+
+//     public function setName($name)
+//     {
+//         $this->name = $name;
+//     }
+
+
+
+//     public function getDarbuotojas()
+//     {
+//         return $this->name;
+//     }
+
+
+//     public function setDarbuotojas($name)
+//     {
+//         $this->name = $name;
+//     }
+
+//     public function __construct()
+//     {
+//     }
+// }
+
+
+// }
 /**
  * @ORM\Entity
  * @ORM\Table(name="Darbuotojai")
@@ -18,40 +72,24 @@ class Darbuotojas
     protected $id;
 
     /** 
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string") 
      */
-    protected $name;
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getname()
-    {
-        return $this->name;
-    }
-
+    protected $Name;
 
     public function setName($name)
     {
         $this->name = $name;
     }
 
-
-
-    public function getDarbuotojas()
+    public function getName()
     {
-        return $this->name;
+        return $this->Name;
     }
 
-
-    public function setDarbuotojas($name)
+    public function getId()
     {
-        $this->name = $name;
+        return $this->id;
     }
 
-    public function __construct()
-    {
-    }
+    
 }

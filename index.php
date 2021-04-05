@@ -65,25 +65,23 @@
         redirect_to_root();
     }
 
-    // $projektas = $entityManager->find('Models\projektas', 8);
-    // if ($projektas) {
-    //     print($projektas->getName());
-    //     $darbuotojas = $projektas->getDarbuotojas();
-    //     if ($darbuotojas) print(" | " . $darbuotojas->getName() . " | ");
-    //     print(' <a href="?updatable"><button>UPDATE</button></a>');
-    // }
-    // print("</pre><hr>");
-
+    $projektas = $entityManager->find('Models\projektas', 1);
+    if ($projektas) {
+        $darbuotojas = $projektas->getDarbuotojas();
+    }
+    print("</pre><hr>");
 
     $products = $entityManager->getRepository('Models\projektas')->findAll();
+
     print("<table>");
     foreach ($products as $p)
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getName() . "</td>"
+            . "<td>" . $darbuotojas->getName() . "</td>"
             . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a></td>"
             . "<td><a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
-            
+
             . "</tr>");
     print("</table>");
     print("</pre><hr>");
