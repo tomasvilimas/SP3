@@ -1,3 +1,21 @@
+<?php
+$url = $_SERVER['REQUEST_URI'];
+switch ($url) {
+    case '/':
+        require __DIR__ . '/index.php';
+        break;
+    case '':
+        require __DIR__ . '/index.php';
+        break;
+    case '/about':
+        require __DIR__ . '/index.php';
+        break;
+    default:
+        http_response_code(404);
+        // require __DIR__ . '/index.php';
+        break;
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,23 +83,16 @@
         redirect_to_root();
     }
 
-    $projektas = $entityManager->find('Models\projektas', 1);
-    if ($projektas) {
-        $darbuotojas = $projektas->getDarbuotojas();
-    }
-    print("</pre><hr>");
 
-    $projektai = $entityManager->getRepository('Models\projektas')->findAll();
-
+    $projektas = $entityManager->getRepository('Models\projektas')->findAll();
     print("<table>");
-    foreach ($projektai as $p)
+    foreach ($projektas as $p)
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getName() . "</td>"
-            . "<td>" . $darbuotojas->getName() . "</td>"
+            // . "<td>" . $p->darbuotojas->getName(). "</td>"    
             . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a></td>"
             . "<td><a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
-
             . "</tr>");
     print("</table>");
     print("</pre><hr>");
@@ -106,12 +117,13 @@
         <label for="name"></label><br>
         <input class=input type="text" name="name" value="" placeholder="Projekto pavadinimas" Required><br>
         <input class=button type="submit" value="Pridėti projektą">
+
     </form>
     <hr>
-
 
     <footer>
         <div id="footer-content">
             <p> NO Copyright 2021 @ Tomas - NO Rights Reserved </p>
         </div>
     </footer>
+

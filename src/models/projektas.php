@@ -27,11 +27,8 @@ class Projektas
      * @ORM\OneToOne(targetEntity="Darbuotojas")
      * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
      */
-    private $darbuotojas;
+    public $darbuotojas;
 
-   
-
-    
 
     public function setId($id)
     {
@@ -58,8 +55,8 @@ class Projektas
         return $this->darbuotojas;
     }
 
-    public function setdarbuotojas($darbuotojas)
+    public function setDarbuotojas($darbuotojas)
     {
-        $this->shipment = $darbuotojas;
+        $this->darbuotojas = $darbuotojas;
     }
 }

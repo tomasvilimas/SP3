@@ -2,7 +2,6 @@
 require_once "bootstrap.php";
 
 
-
 use Models\projektas;
 
 $newProductName = $argv[1];

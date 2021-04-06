@@ -22,6 +22,7 @@ class Darbuotojas
      */
     protected $name;
 
+
     public function setId($id)
     {
         $this->id = $id;
@@ -32,10 +33,6 @@ class Darbuotojas
         return $this->id;
     }
 
-
-
-
-
     public function setName($name)
     {
         $this->name = $name;
@@ -44,16 +41,5 @@ class Darbuotojas
     public function getName()
     {
         return $this->name;
-    }
-
-
-    public function getDarbuotojas()
-    {
-        return $this->darbuotojas;
-    }
-
-    public function setdarbuotojas($darbuotojas)
-    {
-        $this->shipment = $darbuotojas;
     }
 }
