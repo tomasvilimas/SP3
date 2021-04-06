@@ -42,9 +42,9 @@
 
 
     if (isset($_GET['name'])) {
-        $product = new Models\Projektas();
-        $product->setName($_GET['name']);
-        $entityManager->persist($product);
+        $projektas = new Models\Projektas();
+        $projektas->setName($_GET['name']);
+        $entityManager->persist($projektas);
         $entityManager->flush();
         redirect_to_root();
     }
@@ -71,10 +71,10 @@
     }
     print("</pre><hr>");
 
-    $products = $entityManager->getRepository('Models\projektas')->findAll();
+    $projektai = $entityManager->getRepository('Models\projektas')->findAll();
 
     print("<table>");
-    foreach ($products as $p)
+    foreach ($projektai as $p)
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getName() . "</td>"
@@ -87,13 +87,13 @@
     print("</pre><hr>");
 
     if (isset($_GET['updatable'])) {
-        $product = $entityManager->find('Models\projektas', $_GET['updatable']);
+        $projektas = $entityManager->find('Models\projektas', $_GET['updatable']);
 
         print("
         <form action=\"\" method=\"POST\">
-            <input type=\"hidden\" name=\"update_id\" value=\"{$product->getId()}\">
+            <input type=\"hidden\" name=\"update_id\" value=\"{$projektas->getId()}\">
             <label  for=\"name\">Įveskite naują pavadinimą: </label><br><br>
-            <input class=input type=\"text\" name=\"update_name\" value=\"{$product->getName()}\"><br><br>
+            <input class=input type=\"text\" name=\"update_name\" value=\"{$projektas->getName()}\"><br><br>
             <input class=button type=\"submit\" value=\"Pateikti\">
         </form>
     ");

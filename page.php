@@ -41,7 +41,7 @@ function redirect_to_root(){
 
 
 if(isset($_GET['name'])){
-    $product = new Models\Darbuotojas();
+    $product = new Models\darbuotojas();
     $product->setName($_GET['name']);
     $entityManager->persist($product);
     $entityManager->flush();

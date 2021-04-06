@@ -4,60 +4,6 @@ namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
 
-// /**
-//  * @ORM\Entity
-//  * @ORM\Table(name="Darbuotojai")
-//  */
-// class Darbuotojas
-// {
-//     /** 
-//      * @ORM\Id
-//      * @ORM\Column(type="integer")
-//      * @ORM\GeneratedValue
-//      */
-//     protected $id;
-
-//     /** 
-//      * @ORM\Column(type="string")
-//      */
-//     protected $name;
-
-//     public function getId()
-//     {
-//         return $this->id;
-//     }
-
-//     public function getname()
-//     {
-//         return $this->name;
-//     }
-
-
-//     public function setName($name)
-//     {
-//         $this->name = $name;
-//     }
-
-
-
-//     public function getDarbuotojas()
-//     {
-//         return $this->name;
-//     }
-
-
-//     public function setDarbuotojas($name)
-//     {
-//         $this->name = $name;
-//     }
-
-//     public function __construct()
-//     {
-//     }
-// }
-
-
-// }
 /**
  * @ORM\Entity
  * @ORM\Table(name="Darbuotojai")
@@ -74,7 +20,21 @@ class Darbuotojas
     /** 
      * @ORM\Column(type="string") 
      */
-    protected $Name;
+    protected $name;
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+
+
 
     public function setName($name)
     {
@@ -83,13 +43,17 @@ class Darbuotojas
 
     public function getName()
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function getId()
+
+    public function getDarbuotojas()
     {
-        return $this->id;
+        return $this->darbuotojas;
     }
 
-    
+    public function setdarbuotojas($darbuotojas)
+    {
+        $this->shipment = $darbuotojas;
+    }
 }
