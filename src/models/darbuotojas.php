@@ -3,6 +3,7 @@
 namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -21,6 +22,16 @@ class Darbuotojas
      * @ORM\Column(type="string") 
      */
     protected $name;
+
+     /**
+     * Many features have one product. This is the owning side.
+     * @ORM\ManyToOne(targetEntity="projektas", inversedBy="darbuotojai")
+     * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
+     */
+    public $projektas;
+
+
+    
 
 
     public function setId($id)
@@ -41,5 +52,15 @@ class Darbuotojas
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getDarbuotojas()
+    {
+        return $this->darbuotojas;
+    }
+
+    public function setDarbuotojas($darbuotojas)
+    {
+        $this->darbuotojas = $darbuotojas;
     }
 }

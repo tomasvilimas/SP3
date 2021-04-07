@@ -4,6 +4,8 @@ namespace Models;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * @ORM\Entity
@@ -22,12 +24,22 @@ class Projektas
      */
     protected $name;
 
-    /**
-     * One Product has One Shipment.
-     * @ORM\OneToOne(targetEntity="Darbuotojas")
-     * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
+    // /**
+    //  * One Product has One Shipment.
+    //  * @ORM\OneToOne(targetEntity="Darbuotojas")
+    //  * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
+    //  */
+    // public $darbuotojas;
+
+     /**
+     * One product has many features. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="darbuotojas", mappedBy="projektas")
      */
     public $darbuotojas;
+
+    public function __construct() {
+        $this->darbuotojas = new ArrayCollection();
+    }
 
 
     public function setId($id)

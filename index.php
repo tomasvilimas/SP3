@@ -83,19 +83,36 @@ switch ($url) {
         redirect_to_root();
     }
 
+    
+
+    // foreach ($projects as $project) {
+    //     $students = $project->getStudents();
+    //     $studentNames = "";
+    //     foreach ($students as $student) {
+    //         $studentNames .= $student->getName() . ", ";
+    //     }
+    //     $studentNames = substr_replace($studentNames, "", -2);
+
 
     $projektas = $entityManager->getRepository('Models\projektas')->findAll();
     print("<table>");
-    foreach ($projektas as $p)
+    foreach ($projektas as $p){
+        $darbuot = $p->getDarbuotojas();
+        $darVard = "";
+        foreach ($darbuot as $d) {
+            $darVard .= $d->getName(). ",  ";
+        }
+        $darVard = substr_replace($darVard,  "  ", -2);
+    
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getName() . "</td>"
-            // . "<td>" . $p->darbuotojas->getName(). "</td>"    
+            . "<td>" . $darVard. "</td>"    
             . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a></td>"
             . "<td><a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
             . "</tr>");
     print("</table>");
-    print("</pre><hr>");
+    print("</pre><hr>");}
 
     if (isset($_GET['updatable'])) {
         $projektas = $entityManager->find('Models\projektas', $_GET['updatable']);
