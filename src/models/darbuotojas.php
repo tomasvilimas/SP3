@@ -23,15 +23,15 @@ class Darbuotojas
      */
     protected $name;
 
-     /**
+    /**
      * Many features have one product. This is the owning side.
      * @ORM\ManyToOne(targetEntity="projektas", inversedBy="darbuotojai")
-     * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
+     * @ORM\JoinColumn(name="projektoID", referencedColumnName="id")
      */
     public $projektas;
 
 
-    
+
 
 
     public function setId($id)
@@ -62,5 +62,14 @@ class Darbuotojas
     public function setDarbuotojas($darbuotojas)
     {
         $this->darbuotojas = $darbuotojas;
+    }
+    public function getProjektas()
+    {
+        return $this->Projektas;
+    }
+
+    public function setProjektas($Projektas)
+    {
+        $this->Projektas = $Projektas;
     }
 }

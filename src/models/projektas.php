@@ -24,20 +24,16 @@ class Projektas
      */
     protected $name;
 
-    // /**
-    //  * One Product has One Shipment.
-    //  * @ORM\OneToOne(targetEntity="Darbuotojas")
-    //  * @ORM\JoinColumn(name="darbuotojoId", referencedColumnName="id")
-    //  */
-    // public $darbuotojas;
 
-     /**
+
+    /**
      * One product has many features. This is the inverse side.
      * @ORM\OneToMany(targetEntity="darbuotojas", mappedBy="projektas")
      */
     public $darbuotojas;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->darbuotojas = new ArrayCollection();
     }
 
@@ -70,5 +66,14 @@ class Projektas
     public function setDarbuotojas($darbuotojas)
     {
         $this->darbuotojas = $darbuotojas;
+    }
+    public function getProjektas()
+    {
+        return $this->Projektas;
+    }
+
+    public function setProjektas($Projektas)
+    {
+        $this->Projektas = $Projektas;
     }
 }
