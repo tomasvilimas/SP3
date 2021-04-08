@@ -66,17 +66,19 @@
     }
 
 
-    $darbuotojas = $entityManager->getRepository('Models\Darbuotojas')->findAll();
+    $darbuoto = $entityManager->getRepository('Models\Darbuotojas')->findAll();
     print('<table id=table1>');
     print('<thead>');
     print('<tr><th>ID</th><th>Vardas</th><th>Projektas</th><th>Actions</th>');
 
     print('</thead>');
-    foreach ($darbuotojas as $p)
+    foreach ($darbuoto as $p)
+
+
         print('<tr>'
             . '<td>' . $p->getId()  .     '</td>'
             . '<td>' . $p->getName() . '</td>'
-            . '<td>' . $darVard . '</td>'
+            . '<td>' . $p->getProjektas()->getName() . '</td>'
             . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a>"
             . "<a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
             . "</tr>");
@@ -84,6 +86,7 @@
 
     print('<table>');
     print("</pre><hr>");
+
 
     if (isset($_GET['updatable'])) {
         $product = $entityManager->find('Models\Darbuotojas', $_GET['updatable']);

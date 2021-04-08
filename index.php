@@ -67,7 +67,6 @@ switch ($url) {
         redirect_to_root();
     }
 
-
     if (isset($_GET['delete'])) {
         $user = $entityManager->find('Models\projektas', $_GET['delete']);
         $entityManager->remove($user);
