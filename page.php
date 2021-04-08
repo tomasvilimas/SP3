@@ -78,7 +78,7 @@
         print('<tr>'
             . '<td>' . $p->getId()  .     '</td>'
             . '<td>' . $p->getName() . '</td>'
-            . '<td>' . $p->getProjektas()->getName() . '</td>'
+            . '<td>' .  $p->getProjektas()->getName(). '</td>'
             . "<td><a class=button2 href=\"?delete={$p->getId()}\">DELETE</a>"
             . "<a class=button2 href=\"?updatable={$p->getId()}\">UPDATE</a></td>"
             . "</tr>");
